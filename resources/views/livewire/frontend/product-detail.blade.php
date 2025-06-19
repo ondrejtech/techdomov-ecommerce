@@ -297,12 +297,11 @@
 
         </div>
         <div class="panel-tabs pro-detail_more-info js-tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
-            <ul class="nav nav-tabs pro-detail_tabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+            <ul style="cursor: pointer" class="nav nav-tabs pro-detail_tabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
                 role="tablist">
                 @foreach($productDetailTabs as $index => $productDetailTab)
-                    <li wire:click.prevent="setActiveTab({{ $index }})" class="nav-item ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabPanel1" aria-labelledby="ui-id-2" aria-selected="true">
-{{--                        <a class="nav-link ui-tabs-anchor {{ $activeTab === 'test0' ? 'ui-tabs-active ui-state-active' : '' }}" href="" role="presentation" tabindex="-1" id="ui-id-2">{{ $productDetailTab }}</a>--}}
-                        <a class="nav-link ui-tabs-anchor {{ $activeTab == $index ? 'nav-link--active' : '' }}" href="javascript:void(0);">{{ $productDetailTab }}</a>
+                    <li wire:click.prevent="setActiveTab({{ $index }})" class="nav-item ui-state-default ui-corner-top ui-tabs-active ui-state-active">
+                        <a class="nav-link ui-tabs-anchor {{ $activeTab == $index ? 'nav-link--active' : '' }}">{{ $productDetailTab }}</a>
                     </li>
                 @endforeach
             </ul>
@@ -316,7 +315,7 @@
                              aria-expanded="true" aria-hidden="false" style="{{ $activeTab == $index ? 'display: block;' : 'display: none' }}">
 
                             @if($index == 0)
-                                <div class="pro-detail_more-info_wrap">
+                                <div  class="pro-detail_more-info_wrap">
                                     <div class="more-details">
                                         @if($product->Description)
                                             {!! $product->Description !!}
@@ -353,7 +352,7 @@
                                         charakter.
                                     </p>
                                 </div>
-                                <div class="pro-detail_more-info_aside">
+                                {{-- <div class="pro-detail_more-info_aside">
 
 
                                     <div class="panel pro-detail_params-list">
@@ -788,8 +787,8 @@
                                     </div>
 
 
-                                </div>
-                            @elseif($index == 2)
+                                </div> --}}
+                            @elseif($index == 1)
                                 <div class="pro-detail_more-info_wrap">
                                     <div class="more-details">
                                         <table class="table table--auto documents-tbl-list">
@@ -817,7 +816,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="pro-detail_more-info_aside">
+                                {{-- <div class="pro-detail_more-info_aside">
 
 
                                     <div class="panel pro-detail_params-list">
@@ -1252,7 +1251,7 @@
                                     </div>
 
 
-                                </div>
+                                </div> --}}
                             @endif
                         </div>
                     @endforeach

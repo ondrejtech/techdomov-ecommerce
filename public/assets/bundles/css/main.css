@@ -15021,7 +15021,8 @@ html,body {
     border-bottom-width: .07142857142857142rem;
     border-style: solid;
     border-color: #cfd8dc;
-    z-index: 8000
+    z-index: 8000;
+    display: none;
 }
 
 .header-fixed-bar_in {

@@ -2,14 +2,18 @@
 
 namespace App\Livewire\Frontend;
 
+use Livewire\Component;
+use App\Models\Admin\Product;
 use App\Models\Admin\Category;
 use App\Models\Admin\ShoppingCart;
 use App\Models\Admin\SuperCategory;
 use Illuminate\Support\Facades\Auth;
-use Livewire\Component;
+
 class Header extends Component
 {
     public $subcategories, $categories, $total, $itemCount;
+
+    public $search = '';
 
     public function mount()
     {
@@ -20,8 +24,15 @@ class Header extends Component
 
     public function render()
     {
+        $products = [];
+
+        if(strlen($this->search) >=1){
+            $products = Product::where('Name','like','%'.$this->search.'%')->limit(10)->get();
+        }
+
         return view('livewire.frontend.header',[
             'categories' => $this->categories,
+            'products' => $products,
         ]);
     }
 

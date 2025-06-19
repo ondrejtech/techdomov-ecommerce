@@ -21,7 +21,10 @@ class ProductDetail extends Component
         }
 
         $this->productDetailTabs = [
-            'Parametry', 'Logické informace', 'Příslušenství', 'Hodnocení'
+            'Parametry',
+            'Logické informace',
+            'Příslušenství',
+            'Hodnocení'
         ];
         $proId = request()->route('ProId');
         $this->product = Product::with('images')->with('logisticData')->where('ProId', $proId)->firstOrFail();

@@ -16,6 +16,9 @@ Route::prefix('IT')->group(function () {
     Route::get('/{CategoryCode}/{ProId}', [ProductController::class, 'product_detail'])->name('product.view');
 });
 
+Route::prefix('search/')->group(function () {
+    Route::get('{ProId}', [ProductController::class, 'product_list_search'])->name('product.search');
+});
 Route::prefix('info/')->group(function () {
     Route::get('{RootCategoryName}/{RootCategoryCode}', [ViewController::class, 'view'])->name('category.root');
     Route::get('{SuperCategoryName}/{RootCategoryCode}/{SuperCategoryCode}', [SuperCategoryController::class, 'index'])->name('category.super');

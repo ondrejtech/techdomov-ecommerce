@@ -11,4 +11,8 @@ class ProductController extends Controller
     {
         return view('layouts.inc.frontand.product-detail');
     }
+
+    public function product_list_search(){
+        return view('layouts.inc.frontand.product-detail');
+    }
 }
