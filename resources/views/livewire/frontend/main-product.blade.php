@@ -23,7 +23,7 @@
                         <div class="pro-tile_prices">
                             <div class="pro-tile_price">
                                 <span class="pro-tile_price-text pro-tile_price-text--prepend">Vaše cena:</span>
-                                <strong class="pro-tile_price-value">{{ number_format($laptop->EndUserPrice,2,","," ") }}&nbsp;Kč</strong>
+                                <strong class="pro-tile_price-value">{{ number_format($laptop->YourPriceWithFees,2,',',' ') }}&nbsp;Kč</strong>
                                 <span class="pro-tile_price-text pro-tile_price-text--append">s DPH</span>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                     <div class="pro-tile_prices">
                         <div class="pro-tile_price">
                             <span class="pro-tile_price-text pro-tile_price-text--prepend">Vaše cena:</span>
-                            <strong class="pro-tile_price-value">{{ number_format($laptop->EndUserPrice,2,","," ") }}&nbsp;Kč</strong>
+                            <strong class="pro-tile_price-value">{{ number_format($laptop->YourPriceWithFees,2,',',' ') }}&nbsp;Kč&nbsp;Kč</strong>
                             <span class="pro-tile_price-text pro-tile_price-text--append">s DPH</span>
                         </div>
                     </div>
