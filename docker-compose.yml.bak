@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./deployment/Dockerfile
     image: techdomov-eshop
-    container_name: app
+    container_name: techdomov-eshop
     ports:
       - "9000:9000"
     volumes:
@@ -51,5 +51,4 @@ volumes:
 
 networks:
   laravel:
-    external: true
-    name: laravel
+    driver: bridge
