@@ -16,10 +16,6 @@ class ProductDetail extends Component
 
     public function mount()
     {
-        if (!auth()->check()) {
-            return redirect()->to(env('APP_URL')."admin/login"); // Funguje v Livewire
-        }
-
         $this->productDetailTabs = [
             'Parametry',
             'Logické informace',

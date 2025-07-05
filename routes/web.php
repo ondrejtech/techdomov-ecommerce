@@ -13,7 +13,7 @@ use App\Livewire\Admin\Login;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('IT')->group(function () {
-    Route::get('/{CategoryCode}/{ProId}', [ProductController::class, 'product_detail'])->name('product.view');
+    Route::get('/{CategoryCode}/{ProId}', [ProductController::class, 'product_detail'])->name('product.view')->middleware('user.check');
 });
 
 Route::prefix('search/')->group(function () {

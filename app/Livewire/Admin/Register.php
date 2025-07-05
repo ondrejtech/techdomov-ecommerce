@@ -78,6 +78,11 @@ class Register extends Component
 
         return redirect()->route('admin.login');
     }
+
+    public function login()
+    {
+        return redirect()->route('admin.login');
+    }
     public function render()
     {
         return view('livewire.admin.register');

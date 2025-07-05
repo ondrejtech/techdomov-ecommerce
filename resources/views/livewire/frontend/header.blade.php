@@ -261,12 +261,12 @@
                     </button>
                     <div id="headUserMenu" class="head-user-menu">
 
-                        <a href="{{ url(env('APP_URL') . 'admin/register') }}" type="button"
+                        <a href="{{ route('admin.register') }}" type="button"
                             class="btn btn--other btn-user-login user-info">
                             <i class="icon-invoice btn_icon btn-user-login_icon"></i>
                             <span class="btn_label btn-user-login_label">Registrace</span>
                         </a>
-                        <a href="{{ url(env('APP_URL') . 'admin/login') }}" class="btn btn-user-login user-info">
+                        <a href="{{ route('admin.login') }}" class="btn btn-user-login user-info">
                             <i class="icon-user btn_icon btn-user-login_icon"></i>
                             <span class="btn_label btn-user-login_label">Přihlášení</span>
                         </a>
