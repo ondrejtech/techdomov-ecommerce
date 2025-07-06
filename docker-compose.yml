@@ -39,16 +39,14 @@ services:
     volumes:
       - ./:/var/www
       - ./deployment/nginx:/etc/nginx/conf.d:ro
-      - ./deployment/ssl:/etc/nginx/ssl:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     depends_on:
       - app
     networks:
       laravel:
         ipv4_address: 10.89.0.4
-
 volumes:
   mysql-data:
-
 networks:
   laravel:
     external: true

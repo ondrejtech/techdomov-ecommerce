@@ -204,7 +204,7 @@
 
                 </div>
                 <div class="flex-box_item pay-box_btn-wrap">
-                    <form method="post" action="{{ route('documents.checkout', ['order_number' => $order->order_number,'totalDPH' => $totalDPH]) }}">
+                    <form method="post" action="{{ route('documents.paypal.checkout', ['order_number' => $order->order_number,'totalDPH' => $totalDPH]) }}">
                         @csrf
                         <input type="hidden" name="order_number" value="{{ $order->order_number }}">
                         <input type="hidden" name="totalDPH" value="{{ $totalDPH }}">

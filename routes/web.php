@@ -42,6 +42,9 @@ Route::prefix('documents')->group(function () {
     Route::post('/checkout', [ShoppingCartController::class, 'checkout'])->name('documents.checkout');
     Route::get('/success/{order_number}', [ShoppingCartController::class, 'success'])->name('checkout.success');
     Route::get('/cancel/{order_number}', [ShoppingCartController::class, 'cancel'])->name('checkout.cancel');
+    Route::post('/checkout-paypal', [ShoppingCartController::class, 'paypalPayment'])->name('documents.paypal.checkout');
+    Route::get('/success/{order_number}', [ShoppingCartController::class, 'paypalPaymentSuccess'])->name('checkout.paypal.success');
+    Route::get('/cancel/{order_number}', [ShoppingCartController::class, 'cancel'])->name('checkout.paypal.cancel');
 
 });
 
