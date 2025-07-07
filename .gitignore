@@ -27,4 +27,4 @@ Microsoft
 test.blade.php
 main.blade.php
 app/Http/Controllers/TestController.php
-deployment/elinkx.sql
+deployment/mysql/elinkx.sql
