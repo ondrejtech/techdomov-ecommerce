@@ -227,7 +227,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" wire:click="closeModal">Zavřít</button>
-                    <a href="{{ route('admin.login') }}" class="btn btn-primary">Přihlásit se</a>
+                    <a href="{{ route('admin.login') }}" class="btn btn-primary">Zaregistrovat se</a>
                 </div>
             </div>
         </div>

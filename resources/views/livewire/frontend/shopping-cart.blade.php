@@ -472,30 +472,30 @@
                                     <div class="form-base_item">
                                         <div class="form-group">
                                             <label for="txtShipAddrName">Název firmy/kontaktní osoba</label>
-                                            <input placeholder="{{ auth()->user()->name." ". auth()->user()->surname }} "  wire:model="name" name="ctl00$MainContent$txtShipAddrName" type="text" value="Mgr. Radka Staszko Pondělíková" maxlength="35" id="txtShipAddrName" class="form-control is-required" data-rule-required="true"><span class="form-control-validate-info"></span>
-                                            <div>@error('name'){{ $message }}@enderror</div>
+                                            <input wire:model="contact_person_name" name="ctl00$MainContent$txtShipAddrName" type="text"  maxlength="35" id="txtShipAddrName" class="form-control is-required" data-rule-required="true"><span class="form-control-validate-info"></span>
+                                            <div>@error('contact_person_name'){{ $message }}@enderror</div>
                                         </div>
                                     </div>
                                     <div class="form-base_item">
                                         <div class="form-group">
                                             <label for="txtShipAddrName2">Dovětek názvu</label>
-                                            <input wire:model="title_name" name="ctl00$MainContent$txtShipAddrName2" type="text" maxlength="50" id="txtShipAddrName2" class="form-control">
-                                            <div>@error('title_name'){{ $message }}@enderror</div>
+                                            <input wire:model="proof_of_title" name="ctl00$MainContent$txtShipAddrName2" type="text" maxlength="50" id="txtShipAddrName2" class="form-control">
+                                            <div>@error('proof_of_title'){{ $message }}@enderror</div>
                                         </div>
                                     </div>
                                     <div class="form-base_row">
                                         <div class="form-base_item">
                                             <div class="form-group">
                                                 <label for="txtShipAddrStreet">Ulice</label>
-                                                <input wire:model="city" name="ctl00$MainContent$txtShipAddrStreet" type="text" placeholder="{{ auth()->user()->address }}" maxlength="35" id="txtShipAddrStreet" class="form-control is-required" data-rule-required="true"><span class="form-control-validate-info"></span>
-                                                <div>@error('city'){{ $message }}@enderror</div>
+                                                <input wire:model="street" name="ctl00$MainContent$txtShipAddrStreet" type="text" maxlength="35" id="txtShipAddrStreet" class="form-control is-required" data-rule-required="true"><span class="form-control-validate-info"></span>
+                                                <div>@error('street'){{ $message }}@enderror</div>
                                             </div>
                                         </div>
 
                                         <div class="form-base_item">
                                             <div class="form-group">
                                                 <label  for="txtShipAddrCity">Město</label>
-                                                <input wire:model="city" name="ctl00$MainContent$txtShipAddrCity" type="text" placeholder="{{ auth()->user()->city }}" maxlength="35" id="txtShipAddrCity" class="form-control is-required" data-rule-required="true"><span class="form-control-validate-info"></span>
+                                                <input wire:model="city" name="ctl00$MainContent$txtShipAddrCity" type="text" maxlength="35" id="txtShipAddrCity" class="form-control is-required" data-rule-required="true"><span class="form-control-validate-info"></span>
                                                 <div>@error('city'){{ $message }}@enderror</div>
                                             </div>
                                         </div>
@@ -504,7 +504,7 @@
                                         <div class="form-base_item">
                                             <div class="form-group">
                                                 <label  for="txtShipAddrZIP">PSČ</label>
-                                                <input wire:model="postal_code" name="ctl00$MainContent$txtShipAddrZIP" type="text" placeholder="{{ auth()->user()->postcode }}" maxlength="6" id="txtShipAddrZIP" class="form-control is-required" data-rule-required="true"><span class="form-control-validate-info"></span>
+                                                <input wire:model="postal_code" name="ctl00$MainContent$txtShipAddrZIP" type="text" maxlength="6" id="txtShipAddrZIP" class="form-control is-required" data-rule-required="true"><span class="form-control-validate-info"></span>
                                                 <div>@error('postal_code'){{ $message }}@enderror</div>
                                             </div>
                                         </div>
@@ -512,12 +512,8 @@
                                             <div class="form-group">
                                                 <label  for="ddlShipCountry">Stát</label>
                                                 <div class="ux-combo">
-                                                    <select wire:model="state" name="ctl00$MainContent$ddlShipCountry" id="ddlShipCountry" class="form-control ux-combo_field" appenddatabounditem="false">
-                                                        <div>@error('state'){{ $message }}@enderror</div>
-                                                        <option selected="selected" value="52">Česká republika</option>
-                                                        <option value="199">Slovenská republika</option>
-
-                                                    </select>
+                                                    <input wire:model="state_name" name="ctl00$MainContent$ddlShipCountry" id="ddlShipCountry" class="form-control ux-combo_field" >
+                                                        <div>@error('state_name'){{ $message }}@enderror</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -526,14 +522,14 @@
                                         <div class="form-base_item">
                                             <div class="form-group">
                                                 <label for="txtShipPhone">Telefon osoby přebírající zásilku</label>
-                                                <input wire:model="phone" name="ctl00$MainContent$txtShipPhone" type="text" placeholder="{{ auth()->user()->phone }}" maxlength="20" id="txtShipPhone" class="form-control">
+                                                <input wire:model="phone" name="ctl00$MainContent$txtShipPhone" type="text" maxlength="20" id="txtShipPhone" class="form-control">
                                                 <div>@error('phone'){{ $message }}@enderror</div>
                                             </div>
                                         </div>
                                         <div class="form-base_item">
                                             <div class="form-group">
                                                 <label for="txtShipEmail">E-mail osoby přebírající zásilku</label>
-                                                <input wire:model="email" name="ctl00$MainContent$txtShipEmail" type="text" placeholder="{{ auth()->user()->email }}}" maxlength="50" id="txtShipEmail" class="form-control" data-rule-email="true">
+                                                <input wire:model="email" name="ctl00$MainContent$txtShipEmail" type="text" maxlength="50" id="txtShipEmail" class="form-control" data-rule-email="true">
                                                 <div>@error('email'){{ $message }}@enderror</div>
                                             </div>
                                         </div>
@@ -542,7 +538,7 @@
 
                                         <div class="form-base_item">
                                             <div class="buttons-area">
-                                                <button class="btn cart-address_btn-save" type="button" onclick="GAAction(11,0,$(this));saveDelAdrress(22502293);">
+                                                <button class="btn cart-address_btn-save" type="button" wire:click="saveContactPerson">
                                                     <span class="btn_label">Uložit novou dodací adresu</span>
                                                 </button>
                                             </div>

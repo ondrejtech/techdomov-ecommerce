@@ -87,6 +87,10 @@ class ProductDetail extends Component
         return redirect()->route('admin.login');
     }
 
+    public function login(){
+        return redirect()->route('admin.login');
+    }
+
 
     public function mount()
     {
