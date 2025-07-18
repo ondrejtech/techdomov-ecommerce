@@ -27,7 +27,7 @@ Route::prefix('info/')->group(function () {
 
 Route::prefix('/')->group(function () {
     Route::get('/', [PagesController::class, 'index'])->name('index');
-    Route::get('/shopping-cart', [ShoppingCartController::class, 'index'])->name('shopping-cart');
+    Route::get('/shopping-cart', [ShoppingCartController::class, 'index'])->name('shopping-cart')->middleware('user.check');
     Route::get('{ProducerName}', [PagesController::class, 'searchViaManufacturer'])->name('search-via.manufacturer');
 });
 

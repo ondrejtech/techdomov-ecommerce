@@ -227,7 +227,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" wire:click="closeModal">Zavřít</button>
-                    <a href="{{ route('admin.login') }}" class="btn btn-primary">Zaregistrovat se</a>
+                    <button class="btn btn-primary" wire:click="register">Zaregistrovat se</button>
                 </div>
             </div>
         </div>
@@ -1049,12 +1049,12 @@
                                                 <th class="table-head-cell table-col_quantity"
                                                     data-touchtable-el="true">Počet kusů v balení</th>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach($product->logisticData as $logisticData) @endforeach
+					</thead>
+					<tbody>
+                                            @forelse($product->logisticData as $logisticData)
                                             <tr class="suda">
-                                                <td data-th="Typ balení" class="table-col_desc"
-                                                    data-touchtable-el="true">{{ $logisticData->typ }}</td>
+                                                <td data-th="Typ balení" class="table-col_desc">{{ $logisticData->typ }}
+                                                </td>
                                                 <td data-th="Délka (cm)" class="table-col_dimension">{{
                                                     $logisticData->width }}</td>
                                                 <td data-th="Šířka (cm)" class="table-col_dimension">{{
@@ -1063,9 +1063,14 @@
                                                     $logisticData->height }}</td>
                                                 <td data-th="Hmotnost (kg)" class="table-col_weight">{{
                                                     $logisticData->weight }}</td>
-                                                <td data-th="Počet kusů v balení" class="table-col_quantity"
-                                                    data-touchtable-el="true">{{ $logisticData->count }}</td>
+                                                <td data-th="Počet kusů v balení" class="table-col_quantity">{{
+                                                    $logisticData->count }}</td>
                                             </tr>
+                                            @empty
+                                            <tr>
+                                                <td colspan="6">Žádná logistická data nejsou k dispozici.</td>
+                                            </tr>
+                                            @endforelse
                                         </tbody>
                                     </table>
                                 </div>
